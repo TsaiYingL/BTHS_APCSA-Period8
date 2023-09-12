@@ -4,21 +4,17 @@ public class Main1_2
   {
     int integer; //creating an int and printing it out
     integer = 10;
-    System.out.print("integer: ");
-    System.out.println(integer);
+    System.out.println("integer: " + integer);
    
-    double num; //creating a double and printint it
-    num = 0.5;
-    System.out.print("double: ");
-    System.out.println(num);
+    double decimal = 0.5; //creating a double and printint it
+    System.out.println("double: " + decimal);
    
-    boolean bool; //creating a boolean and printing it
-    bool = true;
+    boolean bool = true; //creating a boolean and printing it
     System.out.println(bool);
     bool = false;
     System.out.println(bool);
    
     final double PI = 3.14; //creating a constant
-    System.out.print(PI);
+    System.out.println("Pi: " + PI);
   }
 }
