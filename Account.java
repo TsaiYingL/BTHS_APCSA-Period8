@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
-public class Account {
+public class Account
+{
     private boolean loggedIn = false; //creating a boolean and printing it
     private String key = "a";
     private boolean accountOpen = false;
 
-    public boolean loggedIn()
+    public boolean getLoggedIn()
     {
         return loggedIn;
     }
@@ -15,7 +16,7 @@ public class Account {
         this.loggedIn = status;
     }
 
-    public boolean accoutOpen()
+    public boolean getAccoutOpen()
     {
         return accountOpen;
     }
@@ -24,14 +25,20 @@ public class Account {
     {
         this.accountOpen = status;
     }
-   
+
+
+    public void user()
+    {
+        System.out.println("Hello! what is your name?");
+        Scanner scan = new Scanner(System.in);
+        String username = scan.nextLine();
+        System.out.println("Hello " + username + "\n" + "what is your password?");
+        String password = scan.nextLine();
+        UserInfo user = new UserInfo(username, password);
+    }
+
     public void loggingIn()
     {
-      System.out.println("Hello! what is your name?");
-      Scanner scan = new Scanner(System.in);
-      String name = scan.nextLine();
-      System.out.println("Hello " + name + "\n" + "what is your password?");
-      String password = scan.nextLine();
       while (loggedIn==false)
       {
         if (password.equals(key))
@@ -45,10 +52,12 @@ public class Account {
           scan.close();
           return;
         } else {
-          System.out.println("wrong password! Try again" + "\n" + "Type 'q' to quit");
+          System.out.println("wrong password! Try again" + "\n" +
+"Type 'q' to quit");
           password = scan.nextLine();
         }
       }
     }
-    
+
 }
+
