@@ -78,7 +78,7 @@ public class Account
             System.out.println("Wrong password!!! Please try again.");
             key = scan.nextLine();
           }
-          user = new User(username, key);
+          //user = new User(username, key);
         } else {
           System.out.println("No such user exists!!!");
         }

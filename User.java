@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class User
 {
   private String username;
@@ -5,12 +7,26 @@ public class User
   private int score;
   private double average;
   
-  public User(String username, String password)
+  public User(String username, String password, int score, int average)
   {
     this.username = username;
     this.password = password;
     this.score = score;
     this.average = average;
+  }
+
+  public String toString()
+  {
+    return "\nUser Name: " + username + "\n" +
+    "Password: " + password  + "\n" +
+    "Score: " + score + "\n" +
+    "Average: " + average;
+  }
+  
+  public getUser()
+  {
+    return 
+
   }
 
   public void username (String username)
@@ -49,7 +65,7 @@ public class User
     return score;
   }
   
-  public void average ()
+  public void average (double average)
   {
     this.average = average;
   }
