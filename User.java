@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class User
 {
@@ -15,19 +17,13 @@ public class User
     this.average = average;
   }
 
-  public String toString()
-  {
-    return "\nUser Name: " + username + "\n" +
-    "Password: " + password  + "\n" +
-    "Score: " + score + "\n" +
-    "Average: " + average;
-  }
-  
-  public getUser()
-  {
-    return 
-
-  }
+  // public String toString()
+  // {
+  //   return "\nUser Name: " + username + "\n" +
+  //   "Password: " + password  + "\n" +
+  //   "Score: " + score + "\n" +
+  //   "Average: " + average;
+  // }
 
   public void username (String username)
   {
@@ -73,5 +69,24 @@ public class User
   public double getAverage()
   {
     return average;
+  }
+
+  public Object[] getUser()
+  {
+    Object[] userList = new Object[] {getUserName(),getPassword(),getScore(),getAverage()};
+    return userList;
+  }
+  
+  public void addUser()
+  {
+    try {
+    FileWriter myWriter = new FileWriter("UserInfo.txt", true);
+    myWriter.write(Arrays.toString(getUser())+ "\n");
+    myWriter.close();
+    System.out.println("Successfully wrote to the file.");
+    } catch (IOException e) {
+    System.out.println("An error occurred.");
+    e.printStackTrace();
+    }
   }
 }

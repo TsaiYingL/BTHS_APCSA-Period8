@@ -1,25 +1,25 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main
 {
   public static void main(String[] args)
   {
     User u = new User("mrHolmer", "password", 100, 100);
-    System.out.println(u);
+    System.out.println(u.getUser());
+    u.addUser();
     User tsaiYing = new User("tsaiYing", "word", 1000, 500);
-    User[] users = new User[3];
-    users[0] = u;
-    System.out.println(users[0]);
+    tsaiYing.addUser();
+    // User[] users = new User[3];
+    // users[0] = u;
+    // System.out.println(users[0]);
 
-    ArrayList<User> userList = new ArrayList<User>();
-    userList.add(u);
-    userList.add(tsaiYing);
-    System.out.println(userList);
+    // ArrayList<User> userList = new ArrayList<User>();
+    // userList.add(u);
+    // userList.add(tsaiYing);
+    // System.out.println(userList);
 
-
-
-    CreateAccount.addUser("aaaaa");
   //   Account user = new Account();
   //   user.loggingIn();
 
