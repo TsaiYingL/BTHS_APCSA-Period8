@@ -6,11 +6,21 @@ public class Main
 {
   public static void main(String[] args)
   {
-    User u = new User("mrHolmer", "password", 100, 100);
-    System.out.println(u.getUser());
-    u.addUser();
-    User tsaiYing = new User("tsaiYing", "word", 1000, 500);
-    tsaiYing.addUser();
+    System.out.println("Hello! what is your name?");
+    Scanner scan = new Scanner(System.in);
+    String username = scan.nextLine();
+    System.out.println("What is your password?");
+    String password = scan.nextLine();
+    scan.close();
+    User tsai = new User(username, password, 1000, 500);
+    Account account = new Account(tsai);
+    account.checkUser();
+
+//    User u = new User("mrHolmer", "password", 100, 100);
+//    System.out.println(u.getUser());
+//    u.addUser();
+//    User tsaiYing = new User("tsaiYing", "word", 1000, 500);
+//    tsaiYing.addUser();
     // User[] users = new User[3];
     // users[0] = u;
     // System.out.println(users[0]);

@@ -8,6 +8,10 @@ public class Account
     private boolean accountOpen = false;
     private User user;
 
+    public Account (User user)
+    {
+        this.user = user;
+    }
     public boolean getLoggedIn()
     {
         return loggedIn;
@@ -50,6 +54,7 @@ public class Account
             if (info.contains(user)) 
             {
                 readFile.close();
+                System.out.println("user exists!!!");
                 return true;
             }
             info = readFile.readLine();
@@ -58,31 +63,30 @@ public class Account
       } catch (Exception e) {
           System.out.println("Oh no!!! an error \n"+ e);
       }
+      System.out.println("nooooo!!!!!");
       return false;
     }
 
     public void checkUser()
     {
-        System.out.println("Hello! what is your name?");
-        Scanner scan = new Scanner(System.in);
-        String username = scan.nextLine();
+        String username = user.getUsername();
         if (doesUserExist(username) == true)
         {
-          System.out.println("Hello " + username + "\n" + "what is your password?");
-          String key = scan.nextLine();
+          String key = user.getPassword();
           while (isPassword(key) == false)
           {
             if (key == "q") {
               break;
             }
             System.out.println("Wrong password!!! Please try again.");
+            Scanner scan = new Scanner(System.in);
             key = scan.nextLine();
+            scan.close();
           }
           //user = new User(username, key);
         } else {
           System.out.println("No such user exists!!!");
         }
-        scan.close();
     }
 
     // public void loggingIn()
