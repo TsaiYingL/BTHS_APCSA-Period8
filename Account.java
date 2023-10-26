@@ -42,7 +42,7 @@ public class Account
       }
     }
 
-    public static boolean doesUserExist(String user)
+    public static String doesUserExist(String user)
     {
       try 
       {
@@ -55,39 +55,39 @@ public class Account
             {
                 readFile.close();
                 System.out.println("user exists!!!");
-                return true;
+                return info;
             }
             info = readFile.readLine();
         }
         readFile.close();
       } catch (Exception e) {
-          System.out.println("Oh no!!! an error \n"+ e);
+          System.out.println("Oh no!!! an error!!! \n"+ e);
       }
       System.out.println("nooooo!!!!!");
-      return false;
+      return "";
     }
 
-    public void checkUser()
-    {
-        String username = user.getUsername();
-        if (doesUserExist(username) == true)
-        {
-          String key = user.getPassword();
-          while (isPassword(key) == false)
-          {
-            if (key == "q") {
-              break;
-            }
-            System.out.println("Wrong password!!! Please try again.");
-            Scanner scan = new Scanner(System.in);
-            key = scan.nextLine();
-            scan.close();
-          }
-          //user = new User(username, key);
-        } else {
-          System.out.println("No such user exists!!!");
-        }
-    }
+//    public void checkUser()
+//    {
+//        String username = user.getUserName();
+//        if (doesUserExist(username) == true)
+//        {
+//          String key = user.getPassword();
+//          while (isPassword(key) == false)
+//          {
+//            if (key == "q") {
+//              break;
+//            }
+//            System.out.println("Wrong password!!! Please try again.");
+//            Scanner scan = new Scanner(System.in);
+//            key = scan.nextLine();
+//            scan.close();
+//          }
+//          //user = new User(username, key);
+//        } else {
+//          System.out.println("No such user exists!!!");
+//        }
+//    }
 
     // public void loggingIn()
     // {

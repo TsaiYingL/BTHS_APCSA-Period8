@@ -12,9 +12,9 @@ public class Main
     System.out.println("What is your password?");
     String password = scan.nextLine();
     scan.close();
-    User tsai = new User(username, password, 1000, 500);
+    User tsai = new User(username, password);
     Account account = new Account(tsai);
-    account.checkUser();
+    account.doesUserExist(username + ", " + password);
 
 //    User u = new User("mrHolmer", "password", 100, 100);
 //    System.out.println(u.getUser());

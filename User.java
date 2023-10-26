@@ -17,6 +17,12 @@ public class User
     this.average = average;
   }
 
+  public User(String username, String password)
+  {
+    this.username = username;
+    this.password = password;
+  }
+
   // public String toString()
   // {
   //   return "\nUser Name: " + username + "\n" +
