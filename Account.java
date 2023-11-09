@@ -12,6 +12,7 @@ public class Account
     {
         this.user = user;
     }
+    
     public boolean getLoggedIn()
     {
         return loggedIn;
