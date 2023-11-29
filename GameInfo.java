@@ -5,14 +5,14 @@ public class GameInfo
   private int numGuess;
   private boolean isNumberCorrect = false;
 
-  public void randomNum1 (int randomNum1)
+  public void randomNum1 ()
   {
-    this.randomNum1 = randomNum1;
+    this.randomNum1 = secretNum();
   }
 
-  public void randomNum2 (int randomNum2)
+  public void randomNum2 ()
   {
-    this.randomNum2 = randomNum2;
+    this.randomNum2 = secretNum();
   }
 
   public int getRandomNum1 ()
